@@ -5,7 +5,7 @@ namespace classes {
     class Company {
         private DateTime _founded  {get;set;}
         private string _name {get;set; }
-        public List<Employee> Employees = new List<Employee>();
+        private List<Employee> Employees = new List<Employee>();
 
         public Company (string name) {
             _name = name;
@@ -17,8 +17,13 @@ namespace classes {
             return _name;
         }
         public DateTime getFoundedDate () {
-            return _founded;
+            return _founded.Date;
         }
-
+        public List<Employee> getEmployees () {
+            return Employees;
+        }
+        public void addEmp ( Employee emp) {
+            Employees.Add(emp);
+        }
     }
 }
